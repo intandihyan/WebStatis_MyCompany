@@ -1,0 +1,874 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Movlin Beauty</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+    <style>
+body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #DD84A1;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+
+  revnama {
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #DD84A1;
+      font-weight: 600;
+      margin-bottom: 5px;
+      margin-left: 10px;
+  }
+
+  revtgl {
+      font-size: 12px;
+      text-transform: 0;
+      color: #a5a5a5;
+      font-weight: 600;
+      margin-bottom: 5px;
+      margin-left: 10px;
+  }
+
+  img.kanan {
+    float: right;
+    margin-top: 15px;
+    margin-right: 10px;
+  }
+
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  } 
+.jumbotron {
+    background-color: #DD84A1; /* Orange */
+    color: #ffffff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+}
+.bg-grey {
+    background-color: #f6f6f6;
+}
+.container-fluid {
+    padding: 60px 50px;
+}
+.logo-small {
+    color: #DD84A1;
+    font-size: 50px;
+}
+
+.logo {
+    color: #DD84A1;
+    font-size: 200px;
+}
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+.thumbnail:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+        }
+.thumbnail img {
+    width: 450px;
+    height: 300px;
+    margin-bottom: 10px;
+}
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #DD84A1;
+}
+
+.carousel-indicators li {
+    border-color: #2d2d30;
+}
+
+.carousel-indicators li.active {
+    background-color: #DD84A1;
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+
+.item span {
+    font-style: normal;
+}
+.panel {
+    border: 1px solid #DD84A1;
+    border-radius:0;
+    transition: box-shadow 0.5s;
+}
+
+.panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+
+.panel-footer .btn:hover {
+    border: 1px solid #DD84A1;
+    background-color: #fff !important;
+    color: #DD84A1;
+}
+
+.panel-heading {
+    color: #fff !important;
+    background-color: #dd84a1 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.panel-heading-testi {
+    color: rgb(0, 0, 0) !important;
+    background-color: #ffffff !important;
+    padding: 0px;
+    border-bottom: 1px solid #dd84a1;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.panel-footer {
+    background-color: #fff !important;
+}
+
+.panel-footer h3 {
+    font-size: 32px;
+}
+
+.panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.panel-footer .btn {
+    margin: 15px 0;
+    background-color: #DD84A1;
+    color: #fff;
+}
+.navbar {
+    margin-bottom: 0;
+    background-color: #DD84A1;
+    z-index: 9999;
+    border: 0;
+    font-size: 17px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 2px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+    opacity: 0.9;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #ffffff !important;
+    margin-top: 14px;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #DD84A1 !important;
+    background-color: #ffffff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #ffffff !important;
+}
+
+
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #DD84A1;
+        }
+.slideanim {visibility:hidden;}
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    /* The duration of the animation */
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible;
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+.carousel-inner img {
+      -webkit-filter: grayscale(50%);
+      filter: grayscale(50%); /* make all photos black and white */ 
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+    height: 300;
+  }
+.carousel-caption h3 {
+      color: #2d2d30 !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }  
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+
+</style>
+    
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    
+ <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="img/LOGO.png" alt="Movlin Beauty" width="150" height="75">
+      <!-- <a class="navbar-brand" href="#">Movlin Beauty</a> -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#product">PRODUCT</a></li>
+        <li><a href="#testimoni">REVIEW</a></li>
+        <li><a href="#profile">PROFILE</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="img/serum.jpeg" alt="serum" width="200" height="100">
+        <div class="carousel-caption">
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="img/facialwash.jpeg" alt="facialwash" width="200" height="100">
+        <div class="carousel-caption">
+        </div>      
+      </div>
+    
+      <div class="item">
+        <img src="img/moisturizer.jpeg" alt="moisturizer" width="200" height="100">
+        <div class="carousel-caption">
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+    
+<div id="about" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+  <h2>About Movlin Beauty</h2>
+  <h4>Movlin Beauty memulai perjalanan pada 2020 sebagai local brand perawatan kulit dan tubuh secara online. kami ingin memberikan perawatan terbaik untuk wanita Indonesia. Kini, Movlin Beauty telah berkembang menjadi brand yang tak hanya menyediakan perawatan untuk wajah tapi juga tubuh. Movlin Beauty memiliki Distributor, Agen, Member & Reseller resmi hampir di seluruh penjuru Indonesia. Tak berhenti di situ, Movlin Beauty bahkan merambah mancanegara. Bukan hanya diperuntukkan bagi wanita dewasa, Movlin Beauty juga berkembang menjadi brand yang menjangkau seluruh kalangan mulai dari anak-anak, remaja, hingga pria sekalipun. Movlin Beauty juga memenuhi kebutuhan kecantiikan dan kesehatan kulit dari luar dan dalam.</h4>
+  <p>Movlin Beauty memahami bahwa kecantikan dan kesehatan kulit merupakan aset terpenting. Karena itu, Movlin Beauty terus menjaga kualitas dan mendapatkan sertifikasi BPOM, Halal dan teruji secara klinis untuk memberikan perawatan kulit terbaik.</p>
+</div>
+</div>
+</div>
+    
+    <!-- Container (Services Section) -->
+<div id="product" class="container-fluid">
+  <div class="text-center">
+    <h2>PRODUCT MOVLIN BEAUTY</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>SERUM</h1>
+        </div>
+        <div class="panel-body">
+            <img src="img/serum.jpeg" alt="serum" width="300" height="200">
+          <p><strong>Serum adalah suatu cairan yang mengandung sistem kekebalan terhadap suatu bakteri.Fungsi utama serum adalah mengobati suatu penyakit yang diakibatkan oleh bakteri.</strong></p>
+          <p><strong>30 ml</strong></p>
+        </div>
+        <div class="panel-footer">
+          <h3>Rp. 70.000,-</h3>
+          <!--button class="btn btn-lg">Buy Now</button-->
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>TONER</h1>
+        </div>
+        <div class="panel-body">
+          <img src="img/toner.jpeg" alt="toner" width="300" height="200">
+          <p><strong>Toner adalah salah satu rangkaian dalam perawatan kulit yang tak boleh dilewatkan, sebab fungsinya untuk membersihkan pori-pori, melembabkan, sekaligus menghidrasi kulit wajah.</strong></p>
+          <p><strong>100 ml</strong></p>
+        </div>
+        <div class="panel-footer">
+          <h3>Rp. 99.000,-</h3>
+          <!--button class="btn btn-lg">Buy Now</button-->
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>FACIAL WASH</h1>
+        </div>
+        <div class="panel-body">
+          <img src="img/facialwash.jpeg" alt="facialwash" width="300" height="200">
+          <p><strong>facial wash adalah produk yang membersihkan atau menghilangkan kotoran atau zat lain. Pembersih bisa berupa deterjen, dan ada banyak jenis pembersih yang diproduksi dengan tujuan atau fokus tertentu.</strong></p>
+          <p><strong>100 ml</strong></p>
+        </div>
+        <div class="panel-footer">
+          <h3>Rp. 85.000,-</h3>
+          <!--button class="btn btn-lg">Buy Now</button-->
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>MOISTURIZER</h1>
+        </div>
+        <div class="panel-body">
+          <img src="img/moisturizer.jpeg" alt="moisturizer" width="300" height="200">
+          <p><strong>moisturizer adalah pelembap, yaitu suatu lotion maupun krim yang digunakan pada kulit dan fungsinya adalah untuk mencegah serta mengatasi permasalah kulit kering.</strong></p>
+          <p><strong>30 gram</strong></p>
+        </div>
+        <div class="panel-footer">
+          <h3>Rp. 120.000,-</h3>
+          <!--button class="btn btn-lg">Buy Now</button-->
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>DAY CREAM</h1>
+        </div>
+        <div class="panel-body">
+          <img src="img/day-cream.jpeg" alt="day-cream" width="300" height="200">
+          <p><strong>Day cream berarti yang digunakan di saat pagi atau siang, sebagai pembersih wajah ,pelembab dan dapat melindungi Anda dari sinar UV.</strong></p>
+          <p><strong>12 gram</strong></p>
+        </div>
+        <div class="panel-footer">
+          <h3>Rp. 80.000,-</h3>
+          <!--button class="btn btn-lg">Buy Now</button-->
+        </div>
+      </div>
+    </div>
+   <div class="col-sm-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>NIGHT CREAM</h1>
+        </div>
+        <div class="panel-body">
+          <img src="img/night-cream.jpeg" alt="night-cream" width="300" height="200">
+          <p><strong>night cream berarti cream ini digunakan di malam hari dimana tidak ada cahaya sinar UV di malam hari saat Anda beraktivitas.</strong></p>
+          <p><strong>12 gram</strong></p>
+        </div>
+        <div class="panel-footer">
+          <h3>Rp. 80.000,-</h3>
+          <!--button class="btn btn-lg">Buy Now</button-->
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>SUNSCREEN</h1>
+        </div>
+        <div class="panel-body">
+          <img src="img/sunscreen.jpeg" alt="sunscreen" width="300" height="200">
+          <p><strong>Sunscreen adalah lotion pelindung dari sinar matahari yang bisa menyerap ke dalam lapisan teratas kulit untuk menyerap sinar matahari yang sudah masuk ke dalam kulit.</strong></p>
+          <p><strong>40 gram</strong></p>
+        </div>
+        <div class="panel-footer">
+          <h3>Rp. 105.000,-</h3>
+          <!--button class="btn btn-lg">Buy Now</button-->
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>BODY WASH</h1>
+        </div>
+        <div class="panel-body">
+          <img src="img/bodywash.jpeg" alt="bodywash" width="300" height="200">
+          <p><strong>Bodywash adalah peralatan mandi yang efektif dan nyaman layaknya sabun-sabun pada umumnya,Pada dasarnya, baik shower gel maupun body wash memiliki fungsi utama yaitu untuk membersihkan badan.</strong></p>
+          <p><strong>300 ml</strong></p>
+        </div>
+        <div class="panel-footer">
+          <h3>Rp. 90.000,-</h3>
+          <!--button class="btn btn-lg">Buy Now</button-->
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>HANDBODY</h1>
+        </div>
+        <div class="panel-body">
+          <img src="img/handbody.jpeg" alt="handbody" width="300" height="200">
+          <p><strong>Handbody lotion merupakan suatu sediaan kosmetik berbentuk emulsi cair yang digunakan pada daerah tangan dan tubuh dengan tujuan melembabkan dan melembutkan kulit.</strong></p>
+          <p><strong>100 gram</strong></p>
+        </div>
+        <div class="panel-footer">
+          <h3>Rp. 90.000,-</h3>
+          <!--button class="btn btn-lg">Buy Now</button-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Main styles 1*/
+.description {
+  line-height: 18px;
+  max-height: calc(18px * 3);
+  overflow: hidden;
+}
+.button-readmore::after {
+  content: 'Read more';
+  color: #ffffff;
+}
+.button-readmore {
+  padding: 5px 10px;
+  background: #DD84A1;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button-readmore:hover {
+  background: #b86d86;
+}
+
+#check-readmore:checked ~ .button-readmore::after {
+  content: 'Read less'
+}
+#check-readmore:checked ~ .description {
+  max-height: 100vh;
+}
+
+/* Hide input checkbox */
+#check-readmore {
+  position: absolute;
+  left: -100px;
+}
+
+
+/* Main styles 2*/
+.descriptionn {
+  line-height: 18px;
+  max-height: calc(18px * 3);
+  overflow: hidden;
+}
+.button-readmoree::after {
+  content: 'Read more';
+  color: #ffffff;
+}
+.button-readmoree {
+  padding: 5px 10px;
+  background: #DD84A1;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button-readmoree:hover {
+  background: #b86d86;
+}
+
+#check-readmoree:checked ~ .button-readmoree::after {
+  content: 'Read less'
+}
+#check-readmoree:checked ~ .descriptionn {
+  max-height: 100vh;
+}
+
+/* Hide input checkbox */
+#check-readmoree {
+  position: absolute;
+  left: -700px;
+}
+
+
+/* Main styles 3*/
+.descriptionnn {
+  line-height: 18px;
+  max-height: calc(18px * 3);
+  overflow: hidden;
+}
+.button-readmoreee::after {
+  content: 'Read more';
+  color: #ffffff;
+}
+.button-readmoreee {
+  padding: 5px 10px;
+  background: #DD84A1;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button-readmoreee:hover {
+  background: #b86d86;
+}
+
+#check-readmoreee:checked ~ .button-readmoreee::after {
+  content: 'Read less'
+}
+#check-readmoreee:checked ~ .descriptionnn {
+  max-height: 100vh;
+}
+
+/* Hide input checkbox */
+#check-readmoreee {
+  position: absolute;
+  left: -1300px;
+}
+
+
+/* Main styles 4*/
+.descriptionnnn {
+  line-height: 18px;
+  max-height: calc(18px * 3);
+  overflow: hidden;
+}
+.button-readmoreeee::after {
+  content: 'Read more';
+  color: #ffffff;
+}
+.button-readmoreeee {
+  padding: 5px 10px;
+  background: #DD84A1;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button-readmoreeee:hover {
+  background: #b86d86;
+}
+
+#check-readmoreeee:checked ~ .button-readmoreeee::after {
+  content: 'Read less'
+}
+#check-readmoreeee:checked ~ .descriptionnnn {
+  max-height: 100vh;
+}
+
+/* Hide input checkbox */
+#check-readmoreeee {
+  position: absolute;
+  left: -1900px;
+}
+</style>
+
+<div id="testimoni" class="container-fluid">
+  <div class="text-center">
+    <h2>REVIEW</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="panel panel-default">
+        <div class="panel-heading-testi">
+          <revnama>Nani</revnama>
+          <revnama>|</revnama>
+          <revtgl>18 Februari 2020 19:30</revtgl>
+          <img class="kanan" src="img/bintang.png" alt="bntng" width="60" height="10" />
+        </div>
+        <div class="revimg text-center">
+          <img src="img/review  toner.JPG" alt="review toner" width="331" height="331">
+        </div>
+        <div class="panel-footer">
+          <!-- Input checkbox for readmore -->
+          <input type="checkbox" id="check-readmore">
+          <h2>TONER</h2>
+          <p class="description">Setelah saya gunakan selama beberapa hari hasilnya sangat memuaskan karena bisa membuat kulit saya menjadi lebih lembab dan glowing. 
+            Saat di aplikasikan di wajah terasa ringan dan tidak lengkett, bagus untuk semua kalangan...
+            Love banget sama toner satu ini♥</p>
+    
+          <!-- Readmore button -->
+          <label for="check-readmore" class="button-readmore"></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="panel panel-default">
+        <div class="panel-heading-testi">
+          <revnama>Erna</revnama>
+          <revnama>|</revnama>
+          <revtgl>02 Maret 2020 11:30</revtgl>
+          <img class="kanan" src="img/bintang.png" alt="bntng" width="60" height="10" />
+        </div>
+        <div class="revimg text-center">
+          <img src="img/review serum.JPG" alt="review Serum" width="331" height="331">
+        </div>
+        <div class="panel-footer">
+          <!-- Input checkbox for readmore -->
+          <input type="checkbox" id="check-readmoree">
+          <h2>SERUM</h2>
+          <p class="descriptionn">Sebelum menggunakan produk skincare ini, kulit saya sangat kasar dan mudah berjerawat. 
+            Setelah menggunakan produk ini selama beberapa minggu, kulit saya terlihat lebih halus dan bersih dari jerawat. 
+            Saya sangat merekomendasikan produk ini kepada siapa saja yang memiliki masalah kulit serupa dengan saya.</p>
+    
+          <!-- Readmore button -->
+          <label for="check-readmoree" class="button-readmoree"></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="panel panel-default">
+        <div class="panel-heading-testi">
+          <revnama>Reny</revnama>
+          <revnama>|</revnama>
+          <revtgl>20 Juni 2023 17:30</revtgl>
+          <img class="kanan" src="img/bintang.png" alt="bntng" width="60" height="10" />
+        </div>
+        <div class="revimg text-center">
+          <img src="img/review day cream.jfif" alt="review day cream" width="331" height="331">
+        </div>
+        <div class="panel-footer">
+          <!-- Input checkbox for readmore -->
+          <input type="checkbox" id="check-readmoreee">
+          <h2>DAY CREAM</h2>
+          <p class="descriptionnn">Setelah mencoba berbagai produk skincare, 
+            akhirnya saya menemukan produk yang tepat untuk kulit saya. 
+            Day Cream Movlin Beauty membantu mengurangi keriput dan membuat kulit terlihat lebih muda.</p>
+    
+          <!-- Readmore button -->
+          <label for="check-readmoreee" class="button-readmoreee"></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="panel panel-default">
+        <div class="panel-heading-testi">
+          <revnama>Ayu</revnama>
+          <revnama>|</revnama>
+          <revtgl>03 Februari 2023 07:30</revtgl>
+          <img class="kanan" src="img/bintang.png" alt="bntng" width="60" height="10" />
+        </div>
+        <div class="revimg text-center">
+          <img src="img/review facial wash.jpg" alt="review facialwash" width="331" height="331">
+        </div>
+        <div class="panel-footer">
+          <!-- Input checkbox for readmore -->
+          <input type="checkbox" id="check-readmoreeee">
+          <h2>FACIAL WASH</h2>
+          <p class="descriptionnnn">Alhamdulillah paket sudah diterima dengan baik.
+            Barang 100% ORI karna masuk scan barcode, awalnya sempet takut karna harganya murah, ternyata meskipun murah tapi kualitasnya sangat bagus dan berkualitas...
+            Terimakasihh</p>
+    
+          <!-- Readmore button -->
+          <label for="check-readmoreeee" class="button-readmoreeee"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="profile" class="container-fluid">
+  <h2 class="text-center">PROFILE</h2>
+  <div class="row">
+    <div class="col-sm-6 text-right">
+      <img src="img/poto-ayy.jpeg" alt="Profile Intan dihyan" width="300" height="400">
+    </div>
+      <br>
+      <div class="col-sm-1">
+        <p>Nama</p>
+        <p>TTL</p>
+        <p>Alamat</p>
+        <p>Gender</p>
+        <p>Sekolah</p>
+        <p>Jurusan</p>
+        <p>Agama</p>
+        <p>No. Telp</p>
+        <p>Email</p>
+        <p>Hobi</p>
+      </div>
+
+      <div class="col-sm-5 text-left">
+        <p>: Intan Dihyan Rahmawati</p>
+        <p>: Malang, 22 April 2005</p>
+        <p>: JL.IR.RAIS XIV/35C RT 5 RW 5</p>
+        <p>: Perempuan</p>
+        <P>: SMK Telkom Malang</p>
+        <P>: Teknik Komputer dan Jaringan</p>
+        <P>: Islam</p>
+        <P>: +6282133716541</p>
+        <P>: intandihyan@gmail.com</p>
+        <P>: Berenang dan Bernyanyi</p>
+    </div>
+  
+  </div>
+</div>
+
+
+
+ <div id="contact" class="container-fluid">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <p>Hubungi kami dan kami akan menghubungi anda kembali dalam waktu 24 jam.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Malang, Indonesia</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +6282133716541</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> intandihyan@gmail.com</p>
+    </div>
+    <!--div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div-->
+  </div>
+</div>
+
+<div id="googleMap" style="height:400px;width:100%;"></div>
+
+<!-- Add Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter = new google.maps.LatLng(-7.9768148311809295, 112.6590138645136);
+
+function initialize() {
+var mapProp = {
+  center:myCenter,
+  zoom:12,
+  scrollwheel:false,
+  draggable:false,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Movlin Beauty Copyright &copy;2023 <a href="https://github.com/ricofa/CompanyProfile" title="Visit github">Open Source Github</a></p>
+</footer>
+
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== ""){
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+</body>
+</html>
